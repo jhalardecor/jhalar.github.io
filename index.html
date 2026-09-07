@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="favicon.svg?v=2">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"JHALAR","description":"Handcrafted jhalars and hanging decor for weddings, events and festive spaces.","url":"https://jhalardecor.github.io/jhalar-hanging-decor/","image":"https://jhalardecor.github.io/jhalar-hanging-decor/assets/images/og-cover.jpg","telephone":"+91 81006 56258","email":"lokeshdugar040@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Howrah","addressRegion":"West Bengal","addressCountry":"IN"}}</script>
-<link rel="stylesheet" href="style.css?v=mobile-header-audit-37">
+<link rel="stylesheet" href="style.css?v=ui-standard-2026-01">
 </head>
 <body>
 <header class="header" id="top">
@@ -46,10 +46,10 @@
   <div class="hero-banner-shade"></div>
   <div class="shell hero-banner-content">
     <div class="hero-banner-copy">
-      <p class="kicker">HANDCRAFTED FLORAL HANGINGS, HOWRAH</p>
-      <h1>Colour <em>sets the mood.</em></h1>
-      <p class="hero-lead">Explore handmade designs for weddings, functions, festive spaces and larger orders.</p>
-      <a class="hero-banner-cta" href="#collection">View the collection <span>↓</span></a>
+      <p class="kicker">HANDCRAFTED HANGING DECOR · HOWRAH</p>
+      <h1>Decor that <em>sets the mood.</em></h1>
+      <p class="hero-lead">Handmade floral hangings for weddings, events, festive spaces and thoughtful larger orders.</p>
+      <a class="hero-banner-cta" href="#collection">Explore the collection <span aria-hidden="true">↓</span></a>
     </div>
     <div class="hero-banner-bottom">
       <span>For weddings</span><span>For events</span><span>For festive spaces</span>
@@ -65,4 +65,32 @@
 <footer class="footer"><div class="shell footer-row"><img src="assets/logo-jhalar-02-white.svg" alt="JHALAR"><span>Handmade hanging decor from Howrah, India</span><span>© <span id="year"></span> JHALAR</span></div></footer>
 <div class="modal" id="product-modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="modal-card"><button id="modal-close" class="modal-close" data-close aria-label="Close">×</button><div class="modal-media"><div class="modal-stage" id="modal-stage"><img id="modal-photo" src="" alt=""><video id="modal-video" controls playsinline hidden></video></div><button class="modal-nav prev" data-nav="-1" aria-label="Previous media">‹</button><button class="modal-nav next" data-nav="1" aria-label="Next media">›</button><div class="modal-thumbs" id="modal-thumbs" aria-label="Product media"></div></div><div class="modal-copy"><p class="eyebrow" id="modal-category"></p><h3 id="modal-title"></h3><p id="modal-desc"></p><a id="modal-wa-btn" class="modal-wa-btn" target="_blank" rel="noopener">Enquire about this design <span aria-hidden="true">→</span></a></div></article></div>
 <script src="scripts/product-naming.js?v=catalogue-safe-17" defer></script><script src="script.js?v=mobile-audit-34" defer></script>
+<script>
+(() => {
+  const header = document.querySelector('.header');
+  const offset = () => (header ? header.offsetHeight + 12 : 0);
+  const scrollToTarget = (hash, smooth = true) => {
+    const target = document.querySelector(hash);
+    if (!target) return;
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset());
+    window.scrollTo({top, behavior: smooth ? 'smooth' : 'auto'});
+  };
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      e.preventDefault();
+      history.pushState(null, '', hash);
+      scrollToTarget(hash);
+      document.getElementById('mobile-nav')?.classList.remove('open');
+      const menu = document.getElementById('menu');
+      if (menu) { menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Open menu'); }
+    });
+  });
+  window.addEventListener('load', () => {
+    if (!location.hash) window.scrollTo(0, 0);
+    else requestAnimationFrame(() => scrollToTarget(location.hash, false));
+  });
+})();
+</script>
 </body></html>
