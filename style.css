@@ -244,3 +244,27 @@ section.contact .contact-cta:hover{
       linear-gradient(145deg,#551a2a 0%,#76283a 42%,#9b414c 74%,#b85b59 100%);
   }
 }
+
+
+/* CONTACT final fit — exact constrained contact panel */
+.contact.contact-box,
+.contact-box{
+  width:min(calc(100% - 48px),1200px)!important;
+  margin-inline:auto!important;
+  min-height:360px;
+  padding-block:clamp(64px,9vw,110px);
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  color:#fffaf1!important;
+  border:0!important;
+  background:
+    radial-gradient(120% 145% at 0% 0%,rgba(255,250,241,.16) 0%,rgba(255,250,241,.05) 30%,transparent 58%),
+    radial-gradient(95% 125% at 100% 100%,rgba(229,130,123,.18) 0%,rgba(120,31,50,.08) 42%,transparent 70%),
+    linear-gradient(135deg,#622331 0%,#752838 32%,#913744 62%,#ad514f 100%)!important;
+  box-shadow:0 24px 70px rgba(20,25,66,.12)!important;
+}
+.contact.contact-box::before,.contact-box::before{content:"";position:absolute;inset:-30%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 30% 30%,rgba(255,250,241,.12),transparent 28%),radial-gradient(ellipse at 72% 65%,rgba(255,220,208,.10),transparent 32%);filter:blur(45px)}
+.contact.contact-box h2,.contact-box h2{color:#fffaf1!important}
+.contact.contact-box p,.contact-box p{color:rgba(255,250,241,.88)!important}
+@media(max-width:680px){.contact.contact-box,.contact-box{width:calc(100% - 32px)!important;min-height:0;padding-block:56px;background:radial-gradient(120% 90% at 0% 0%,rgba(255,250,241,.14),transparent 55%),linear-gradient(145deg,#622331 0%,#84313f 52%,#aa514f 100%)!important}}
