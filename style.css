@@ -112,3 +112,80 @@ p{line-height:1.65}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* Contact section — soft velvet gradient treatment */
+.contact-section,
+#contact,
+.contact{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(255,250,241,.96) 0%, rgba(255,250,241,.58) 28%, transparent 58%),
+    radial-gradient(ellipse at 88% 82%, rgba(122,30,44,.18) 0%, rgba(122,30,44,.06) 32%, transparent 62%),
+    linear-gradient(135deg, #fffaf1 0%, #f7e9df 32%, #e9cfc9 58%, #c88d91 100%);
+}
+
+.contact-section::before,
+#contact::before,
+.contact::before{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255,255,255,.36), transparent 28%),
+    radial-gradient(circle at 68% 58%, rgba(255,250,241,.22), transparent 34%);
+  filter:blur(30px);
+  opacity:.9;
+}
+
+.contact-section::after,
+#contact::after,
+.contact::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:linear-gradient(115deg, rgba(255,250,241,.14), transparent 42%, rgba(91,27,40,.08) 100%);
+}
+
+/* Keep contact content crisp over the velvet background */
+.contact-section .container,
+#contact .container,
+.contact .container{position:relative}
+
+.contact-section h2,
+#contact h2,
+.contact h2{color:var(--ink)}
+
+.contact-section .contact-card,
+#contact .contact-card,
+.contact .contact-card{
+  background:rgba(255,250,241,.72);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,250,241,.72);
+  box-shadow:0 18px 45px rgba(92,45,49,.10);
+}
+
+.contact-section .contact-cta,
+#contact .contact-cta,
+.contact .contact-cta{
+  background:var(--wine);
+  color:#fffaf1;
+  border-color:transparent;
+}
+
+@media(max-width:680px){
+  .contact-section,
+  #contact,
+  .contact{
+    background:
+      radial-gradient(ellipse at 15% 10%, rgba(255,250,241,.95), transparent 52%),
+      linear-gradient(155deg,#fffaf1 0%,#f3dfd8 48%,#d9a8aa 100%);
+  }
+}
