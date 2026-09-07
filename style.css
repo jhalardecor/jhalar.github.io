@@ -189,3 +189,58 @@ p{line-height:1.65}
       linear-gradient(155deg,#fffaf1 0%,#f3dfd8 48%,#d9a8aa 100%);
   }
 }
+
+
+/* CONTACT — true smooth velvet gradient, override previous treatment */
+section.contact{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  color:#fffaf1;
+  background:
+    radial-gradient(120% 90% at -10% 0%, rgba(255,250,241,.20) 0%, rgba(255,250,241,.06) 34%, transparent 62%),
+    radial-gradient(95% 110% at 105% 100%, rgba(255,191,180,.22) 0%, rgba(185,75,74,.10) 38%, transparent 68%),
+    linear-gradient(125deg,#4a1725 0%,#692333 24%,#7f2d3d 48%,#9b3c48 72%,#b85a59 100%);
+}
+section.contact::before{
+  content:"";
+  position:absolute;
+  inset:-35%;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse at 28% 38%, rgba(255,250,241,.14) 0%, transparent 27%),
+    radial-gradient(ellipse at 70% 55%, rgba(255,219,207,.10) 0%, transparent 32%),
+    radial-gradient(ellipse at 48% 82%, rgba(67,15,29,.18) 0%, transparent 36%);
+  filter:blur(45px);
+  transform:scale(1.05);
+}
+section.contact::after{display:none!important}
+section.contact .contact-box{
+  position:relative;
+  z-index:1;
+}
+section.contact h2{color:#fffaf1!important}
+section.contact p:not(.eyebrow){color:rgba(255,250,241,.88)!important}
+section.contact .light-eyebrow{color:#f0c88f!important}
+section.contact .contact-cta{
+  min-height:52px;
+  padding:0 26px;
+  border-radius:8px;
+  background:#fffaf1!important;
+  color:#6f2030!important;
+  box-shadow:0 12px 30px rgba(39,8,18,.18);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+}
+section.contact .contact-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 38px rgba(39,8,18,.24);
+}
+
+@media(max-width:680px){
+  section.contact{
+    background:
+      radial-gradient(110% 70% at 0% 0%, rgba(255,250,241,.16), transparent 58%),
+      radial-gradient(100% 90% at 100% 100%, rgba(255,194,183,.18), transparent 64%),
+      linear-gradient(145deg,#551a2a 0%,#76283a 42%,#9b414c 74%,#b85b59 100%);
+  }
+}
