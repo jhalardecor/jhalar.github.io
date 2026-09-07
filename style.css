@@ -26,3 +26,89 @@ h1,h2,h3,p{margin:0}h1,h2{font-weight:500;letter-spacing:-.012em;line-height:1.1
 @media(prefers-color-scheme:dark){:root{--ink:#f7ece7;--muted:#d7c6c0;--soft:#cdbab4;--line:#4a3638;--paper:#171214;--cream:#241b1d;--white:#fffaf6}body{background:linear-gradient(135deg,#171214 0%,#211719 55%,#2b1b1d 100%);color:var(--ink)}.header{background:rgba(23,18,20,.9);border-bottom-color:rgba(255,255,255,.08)}.nav a{color:#e7d8d3}.hero-banner{background:linear-gradient(135deg,#211719 0%,#352326 48%,#41282a 100%)}.hero-banner-media{opacity:.78}.hero-banner-shade{background:linear-gradient(90deg,rgba(23,18,20,.95) 0%,rgba(23,18,20,.88) 34%,rgba(35,24,25,.63) 58%,rgba(35,24,25,.1) 80%)}.hero-banner h1{color:#ffe5dc}.hero-banner-copy>p:not(.kicker){color:#dfccc6}.intro-band,.custom{background:linear-gradient(135deg,#211719 0%,#2a1c1e 100%)}.product-image{background:linear-gradient(145deg,#2c2021 0%,#372628 100%);border-color:#4d3839}.product-image img{filter:drop-shadow(0 14px 16px rgba(0,0,0,.28))}.filter-btn{background:rgba(42,30,32,.7);color:#eadbd6}.filter-btn.active{background:#4a2730;border-color:#73404b;color:#ffe9e0}.product-title{color:#f3e4df}.product-details-btn{background:#2a1b1d;border-color:#5c4445;color:#ffdcd4}.modal-card{background:#1b1517;border-color:#3c2b2d}.modal-media{background:linear-gradient(145deg,#261b1d 0%,#1c1618 75%)}.modal-copy h3{color:#ffe0d7}.modal-copy>p:not(.eyebrow){color:#d7c6c0}.modal-close{background:#1e1719;border-color:#4b3537;color:#ffe0d7}.mobile-nav.open{background:#171214;border-color:#423033}.footer{background:#120e10}}
 @media(prefers-contrast:more){.filter-btn,.product-details-btn,.modal-close{border-width:2px}.product-image{border-width:2px}}
 .modal-zoom-controls{display:none!important}.modal-stage{position:relative;overflow:hidden;width:100%;height:100%;min-height:0;display:grid;place-items:center;touch-action:pan-x pan-y;background:transparent}.modal-stage img{cursor:zoom-in;transform-origin:50% 50%;user-select:none;-webkit-user-drag:none}.modal-stage.is-video img{display:none}.modal-stage.is-video video{display:block;width:100%;height:100%;object-fit:contain}.modal-stage video{max-width:100%;max-height:100%}
+
+
+/* JHALAR UI Standard 2026 — final responsive alignment pass */
+html{scroll-padding-top:94px}
+body{overflow-x:hidden}
+.section{padding-block:clamp(48px,6vw,96px)}
+h1{font-size:clamp(2.9rem,5.2vw,5.8rem)}
+h2{font-size:clamp(2rem,3.2vw,3.7rem);line-height:1.16}
+p{line-height:1.65}
+
+/* Header: stable geometry and consistent typography */
+.header{height:80px}
+.header-row{grid-template-columns:180px 1fr 180px}
+.brand{width:142px;justify-self:start}
+.nav{gap:clamp(26px,3vw,46px)}
+.nav a{font-size:.84rem;font-weight:500;letter-spacing:.035em;line-height:1;white-space:nowrap}
+.menu{justify-self:end;position:relative;display:none;width:44px;height:44px;padding:0;border:0;background:transparent}
+.menu i{position:absolute;left:50%;width:22px;height:2px;margin:0;background:var(--ink);border-radius:999px;transform:translateX(-50%);transition:transform .22s var(--ease),top .22s var(--ease)}
+.menu i:first-child{top:18px}.menu i:last-child{top:25px}
+.menu[aria-expanded="true"] i:first-child{top:22px;transform:translateX(-50%) rotate(45deg)}
+.menu[aria-expanded="true"] i:last-child{top:22px;transform:translateX(-50%) rotate(-45deg)}
+.mobile-nav{font-family:var(--font)}
+.mobile-nav a{font-weight:500;letter-spacing:.02em}
+
+/* Hero: flexible, proportional and readable */
+.hero-banner{height:auto;min-height:clamp(520px,68svh,760px);max-height:none}
+.hero-banner-shade{background:linear-gradient(90deg,#fffaf1 0%,rgba(255,250,241,.98) 34%,rgba(255,250,241,.88) 52%,rgba(255,250,241,.55) 68%,rgba(255,250,241,.10) 86%,transparent 100%)}
+.hero-banner-content{min-height:inherit}
+.hero-banner-copy{max-width:590px}
+.hero-banner h1{max-width:11ch;font-size:clamp(3rem,5vw,5.7rem);line-height:1.06;margin-bottom:14px}
+.hero-banner .kicker{margin-bottom:14px}
+.hero-banner-copy>p:not(.kicker){margin-bottom:22px;max-width:42ch}
+.hero-banner-cta{min-height:48px;padding:0 22px;border-radius:8px;border:1px solid rgba(122,30,44,.18);background:var(--wine);color:#fffaf1;box-shadow:0 10px 28px rgba(74,30,44,.14)}
+.hero-banner-cta:hover{background:#922b3a;color:#fffaf1}
+.hero-banner-bottom{padding-top:12px}
+
+/* Calm, consistent cards and controls */
+.product-card{transition:transform .2s var(--ease)}
+.product-image{transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+.product-card:hover .product-image{transform:translateY(-2px);box-shadow:0 14px 30px rgba(92,45,49,.10)}
+.product-details-btn{min-height:44px;border-radius:8px}
+.filter-btn{min-height:44px}
+.contact-cta{min-height:48px;display:inline-flex;align-items:center;justify-content:center}
+.modal-card{max-height:90dvh}
+.modal-close{width:44px;height:44px}
+.modal-stage{overflow:hidden;touch-action:pan-x pan-y}
+
+/* Footer: cleaner hierarchy */
+.footer{padding:40px 0}
+.footer-row{font-size:.82rem;line-height:1.5}
+.footer img{width:118px}
+
+@media(max-width:980px){
+  .header{height:76px}
+  .header-row{grid-template-columns:1fr auto}
+  .nav{display:none}
+  .menu{display:block}
+  .brand{width:132px}
+  .mobile-nav.open{padding-top:8px;padding-bottom:18px}
+  .mobile-nav a{min-height:48px;display:flex;align-items:center;font-size:.94rem}
+  .hero-banner{min-height:clamp(480px,64svh,650px)}
+}
+
+@media(max-width:680px){
+  html{scroll-padding-top:84px}
+  .header{height:72px}
+  .brand{width:124px}
+  .menu{width:44px;height:44px}
+  .menu i{width:22px;height:2px}
+  .hero-banner{min-height:clamp(380px,56svh,520px);height:auto}
+  .hero-banner-media img{object-position:62% center}
+  .hero-banner-shade{background:linear-gradient(180deg,#fffaf1 0%,rgba(255,250,241,.97) 32%,rgba(255,250,241,.84) 56%,rgba(255,250,241,.48) 76%,rgba(255,250,241,.18) 100%)}
+  .hero-banner-content{padding-block:32px 18px}
+  .hero-banner-copy{align-self:end;padding-bottom:20px}
+  .hero-banner .kicker{font-size:.6rem}
+  .hero-banner h1{font-size:clamp(2.55rem,12vw,3.8rem);max-width:10.5ch;margin-bottom:10px}
+  .hero-banner-copy>p:not(.kicker){font-size:1rem;line-height:1.55;margin-bottom:18px}
+  .hero-banner-cta{width:100%;justify-content:center;min-height:48px}
+  .hero-banner-bottom{display:none}
+  .section{padding-block:clamp(32px,10vw,48px)}
+  .footer{padding:32px 0}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
